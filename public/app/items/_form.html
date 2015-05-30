@@ -1,0 +1,22 @@
+<div class="row">
+  <form ng-submit="submit(item)" class="col-md-4 form-horizontal">
+    <fieldset>
+    
+      <!-- Form Name -->
+      <legend>{{title}}</legend>
+      
+      <!-- Text input-->
+      <div class="form-group">
+        <input ng-model="item.name" id="Name" name="item[name]" type="text" placeholder="Item name here..." class="form-control input-md">
+        <input ng-model="item.description" id="Description" name="item[description]" type="text" placeholder="Item description here..." class="form-control input-md">
+        <input ng-model="item.price" id="Price" name="item[price]" type="text" placeholder="Item price here..." class="form-control input-md">
+      </div>
+      
+      <!-- Button -->
+      <div class="form-group">
+        <input type="submit" id="Submit" name="Submit" class="btn btn-primary"></input>
+      </div>
+    
+    </fieldset>
+  </form>
+</div>

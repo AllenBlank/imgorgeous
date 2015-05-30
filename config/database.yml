@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: rangular_development
+  template: template0
+  pool: 5
+  username: ubuntu
+  password: c9dev
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: rangular_test
+  template: template0
+  pool: 5
+  username: ubuntu
+  password: c9dev

@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-12">
+    <a ng-href="{{item.showPath}}"><h1>{{ item.name || "Name" }}</h1></a>
+    <a ng-show="item.editPath" ng-href="{{item.editPath}}"><h5>Edit this item</h5></a>
+    <p>{{ item.description || "Description..." }}</p>
+    <p>{{ (item.price || 0) | currency }}</p>
+  </div>
+</div>
