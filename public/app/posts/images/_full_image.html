@@ -3,7 +3,7 @@
     <div class="full-image-container">
       <h2 class="text-left">{{image.title}}</h2>
       <div class="image-container"></div>
-      <p class="description text-left" ng-show="image.description" ng-bind-html="image.description | linky"></p>
+      <p class="description text-left" ng-if="image.description" ng-bind-html="image.description | linky"></p>
     </div>
   </div>
 </div>

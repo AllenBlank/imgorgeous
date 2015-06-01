@@ -8,7 +8,7 @@ angular.module('imgorgeous').config ($routeProvider) ->
     templateUrl: '/app/posts/index.html'
     controller:  'postsController'
     action:      'index'
-  .when '/posts/:type/:id', 
+  .when '/posts/:type/:id/:page', 
     templateUrl: '/app/posts/show.html'
     controller:  'postsController'
     action:      'show'

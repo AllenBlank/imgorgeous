@@ -1,12 +1,26 @@
-<div class="post-title" ng-if="post.images.length > 1" ng-cloak>
-    <h2>{{post.title}}</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="post-title" ng-if="post.image_count > 1" ng-cloak>
+            <h2>{{post.title}}</h2>
+            <p>({{post.image_count}} images)</p>
+        </div>
+    </div>
 </div>
 
 <full-image ng-repeat="image in post.images" image="image"></full-image>
 
+<div class="row" ng-if="previousImages || nextImages">
+    <div class="col-md-12">
+        <div class="image-pager">
+            <a class="btn btn-default btn-lg pull-left" ng-href="{{previousImages}}" ng-if="previousImages">previous images</a>
+            <a class="btn btn-default btn-lg pull-right" ng-href="{{nextImages}}" ng-if="nextImages">next images</a>
+        </div>
+    </div>
+</div>
+
 <comment ng-repeat="comment in post.comments" comment="comment"></comment>
 
 <div class="footer-nav">
-    <a class="btn btn-default btn-lg" href="{{previous}}"><<</a>
-    <a class="btn btn-default btn-lg" href="{{next}}">>></a>
+    <a class="btn btn-default btn-lg" ng-href="{{previous}}"><<</a>
+    <a class="btn btn-default btn-lg" ng-href="{{next}}">>></a>
 </div>

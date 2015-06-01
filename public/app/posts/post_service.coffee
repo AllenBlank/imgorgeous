@@ -5,17 +5,21 @@ class Image
     @description = json.description
     @date = json.datetime
     @animated = json.animated
-    if @animated then @url = json.webm else @url = json.link
-    @url = @url.replace('\\','')
+    if json.height * json.width > 10000000
+      @url = '/app/img/gigantic.png'
+    else
+      if @animated then @url = json.webm else @url = json.link
+      
 
 class Post
-  constructor: (json) ->
+  constructor: (json, page=1) ->
     @id = json.id
     @title = json.title
     if json.is_album then type = '/album/' else type = '/image/'
-    @url = '#/posts' + type + @id
+    @url = '#/posts' + type + @id + '/1'
     if json.cover then cover = json.cover else cover = @id
     @previewImage = 'http://i.imgur.com/' + cover + 'b.jpg'
+    @image_count = json.images_count
     @images = []
     if json.images?
       @images.push new Image(element) for element in json.images
