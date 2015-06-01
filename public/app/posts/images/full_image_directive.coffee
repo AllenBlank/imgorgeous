@@ -15,6 +15,3 @@ angular.module('imgorgeous')
           $this.append video
         else
           $this.append image
-      else if !inView
-        $this.height($this.height()) if $this.width()
-        $this.text('')
