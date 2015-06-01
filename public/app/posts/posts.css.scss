@@ -1,0 +1,57 @@
+.post-preview {
+  img {
+    border: 0.2em solid transparent;
+    width: 100%;
+  }
+  .preview-hover {
+    position: absolute; // this, with the padding is where the magic is.
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    
+    h3 {
+      margin: 1em;
+      color: #ffffff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-weight: bold;
+    }
+  }
+  
+  img, .preview-hover {
+    border-radius: 0.5em;
+  }
+}
+
+.post-preview:hover {
+  .preview-hover {
+    display: block;
+  }
+}
+
+.preview-row {
+  .col-md-4 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+.post-title {
+  background-color: #111;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  padding-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  opacity: 0.6;
+}

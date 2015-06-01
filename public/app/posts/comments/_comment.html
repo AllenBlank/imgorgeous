@@ -1,0 +1,8 @@
+<div class="row" ng-cloak>
+  <div class="col-md-12">
+    <div class="comment-container">
+      <small>({{comment.points}}) {{comment.author}}</small>
+      <blockquote ng-bind-html="comment.comment | linky"></blockquote>
+    </div>
+  </div>
+</div>

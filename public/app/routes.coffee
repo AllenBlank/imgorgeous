@@ -1,23 +1,16 @@
-angular.module('Rangular').config ($routeProvider) ->
+angular.module('imgorgeous').config ($routeProvider) ->
   $routeProvider
   .when '/', 
-    templateUrl: '/app/index.html'
-    controller: ->
-  .when '/items', 
-    templateUrl: '/app/items/index.html'
-    controller:  'itemsController'
+    templateUrl: '/app/posts/index.html'
+    controller:  'postsController'
     action:      'index'
-  .when '/items/new', 
-    templateUrl: '/app/items/new.html'
-    controller:  'itemsController'
-    action:      'new'
-  .when '/items/:id/edit', 
-    templateUrl: '/app/items/edit.html'
-    controller:  'itemsController'
-    action:      'edit'
-  .when '/items/:id', 
-    templateUrl: '/app/items/show.html'
-    controller:  'itemsController'
+  .when '/posts', 
+    templateUrl: '/app/posts/index.html'
+    controller:  'postsController'
+    action:      'index'
+  .when '/posts/:type/:id', 
+    templateUrl: '/app/posts/show.html'
+    controller:  'postsController'
     action:      'show'
   .otherwise
     redirectTo: '/'

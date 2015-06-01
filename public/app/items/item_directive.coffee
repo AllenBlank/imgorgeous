@@ -1,4 +1,4 @@
-angular.module('Rangular')
+angular.module('imgorgeous')
 .directive 'item', (Item) ->
   restrict: 'E'
   templateUrl: '/app/items/_item.html'

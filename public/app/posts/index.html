@@ -1,0 +1,11 @@
+<div class="row preview-row" ng-repeat="post in posts track by $index" ng-if="$index % 3 === 0">
+  <div class="col-md-4">
+    <post-preview post="posts[$index]"></post-preview>
+  </div>
+  <div class="col-md-4">
+    <post-preview post="posts[$index + 1]"></post-preview>
+  </div>
+  <div class="col-md-4">
+    <post-preview post="posts[$index + 2]"></post-preview>
+  </div>
+</div>

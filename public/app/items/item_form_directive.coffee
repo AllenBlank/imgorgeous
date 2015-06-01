@@ -1,4 +1,4 @@
-angular.module('Rangular')
+angular.module('imgorgeous')
 .directive 'itemform', ->
   restrict: 'E'
   templateUrl: '/app/items/_form.html'

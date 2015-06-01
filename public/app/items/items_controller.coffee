@@ -1,4 +1,4 @@
-angular.module('Rangular')
+angular.module('imgorgeous')
 .controller 'itemsController', ($routeParams, $route, $scope, Item) ->
   
   @beforeActions = 

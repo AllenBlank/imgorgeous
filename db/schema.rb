@@ -24,12 +24,4 @@ ActiveRecord::Schema.define(version: 20150517021049) do
     t.datetime "updated_at"
   end
 
-  create_table "products", force: true do |t|
-    t.string   "name",        limit: nil
-    t.text     "description"
-    t.float    "price"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
 end
