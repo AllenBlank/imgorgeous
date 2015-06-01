@@ -1,23 +1,31 @@
 angular.module('imgorgeous')
-.controller 'postsController', ($routeParams, $route, $scope, Post) ->
+.controller 'postsController', ($routeParams, $route, $scope, Post, $rootScope, Gallery) ->
   
   @beforeActions = 
-    setPosts: ['index','show']
+    setPosts: ['index']
     setPost: ['show']
   
   @actions =
     index: ->
     show: ->
+      setUp = (posts)->
+        Gallery.posts = posts
+        $scope.posts = posts
+        for post, i in $scope.posts
+          currentIndex = i if post.id is $routeParams.id
+        $scope.next = $scope.posts[currentIndex + 1].url
+        $scope.previous = $scope.posts[currentIndex - 1].url
+        
+      if Gallery.posts?
+        setUp(Gallery.posts)
+      else
+        Post.all().success setUp
      
   @privateMethods =
     setPosts: ->
       Post.all().success (response) ->
         $scope.posts = response
-        if $routeParams.id?
-          for post, i in $scope.posts
-            currentIndex = i if post.id is $routeParams.id
-          $scope.next = $scope.posts[currentIndex + 1].url
-          $scope.previous = $scope.posts[currentIndex - 1].url
+        Gallery.posts = response
     setPost: ->
       if $routeParams.id?
         Post.find($routeParams.id, $routeParams.type).success (data) ->

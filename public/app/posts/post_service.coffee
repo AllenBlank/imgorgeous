@@ -50,8 +50,10 @@ class PostService
       headers: 
         Authorization: 'Client-ID 93113798061328f'
       transformResponse: @extend
+    @gallery = []
 
   all: ->
+    console.log 'fetching gallery'
     @http(@config)
   find: (id, type) ->
     params = $.extend(true, {}, @config)
