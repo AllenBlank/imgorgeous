@@ -24,3 +24,17 @@ body {
     color: #111;
   }
 }
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #333;
+  border: 0;
+  
+  a.navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: #eee;
+    padding: -1em;
+  }
+}
