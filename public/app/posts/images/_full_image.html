@@ -1,9 +1,9 @@
 <div class="row" ng-cloak>
   <div class="col-md-12 text-center">
     <div class="full-image-container">
-      <h2 class="text-left">{{image.title}}</h2>
+      <h2 class="text-left" ng-if="image.title" ng-bind-html="image.title"></h2>
       <div class="image-container"></div>
-      <p class="description text-left" ng-if="image.description" ng-bind-html="image.description | linky"></p>
+      <p class="description text-left" ng-if="image.description" ng-bind-html="image.description | linky:'_blank'"></p>
     </div>
   </div>
 </div>
