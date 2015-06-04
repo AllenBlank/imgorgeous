@@ -8,10 +8,12 @@ class Image
     if json.height * json.width > 10000000
       @url = '/app/img/gigantic.png'
     else
-      if @animated 
+      if @animated and json.webm
         @url = json.webm 
         @backupUrl = json.mp4
-      else @url = json.link
+      else 
+        @animated = false
+        @url = json.link
       
 
 class Post
