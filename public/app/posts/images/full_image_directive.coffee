@@ -5,14 +5,15 @@ angular.module('imgorgeous')
   scope:
     image: '='
   link: (scope, element)->
-    image = '<img src="' + scope.image.url + '"></img>'
-    video = 
-      '<video loop="true" autoplay>' +
-      '<source src="' + scope.image.url + '" type="video/webm">' +
-      '<source src="' + scope.image.backupUrl + '" type="video/mp4">' +
-      '</video>'
+    image = '<img src="' + scope.image.link + '"></img>'
+    video = '<video loop="true" poster="' + scope.image.link + '" autoplay>'
+    if scope.image.webm
+      video = video + '<source src="' + scope.image.webm + '" type="video/webm">'
+    if scope.image.mp4
+      video = video + '<source src="' + scope.image.mp4 + '" type="video/mp4">'
+    video = video + image + '</video>'
     container = element.find('.image-container')
-    wrapper = '<a href="' + scope.image.url + '" target="_blank"></a>'
+    wrapper = '<a href="' + scope.image.link + '" target="_blank"></a>'
     container.wrap(wrapper)
     container.on 'inview', (e, inView)->
       $this = $(this)

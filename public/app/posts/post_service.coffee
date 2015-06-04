@@ -5,15 +5,11 @@ class Image
     @description = json.description
     @date = json.datetime
     @animated = json.animated
+    @link = json.link
+    @webm = json.webm
+    @mp4 = json.mp4
     if json.height * json.width > 10000000
-      @url = '/app/img/gigantic.png'
-    else
-      if @animated and json.webm
-        @url = json.webm 
-        @backupUrl = json.mp4
-      else 
-        @animated = false
-        @url = json.link
+      @link = '/app/img/gigantic.png'
       
 
 class Post
